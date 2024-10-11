@@ -5,7 +5,7 @@ let colorSelected;
 
 // Add a row
 function addR() {
-    alert("Clicked Add Row"); // Replace this line with your code.
+    alert("Clicked"); // Replace this line with your code.
 }
 
 // Add a column
@@ -42,4 +42,12 @@ function fillAll(){
 // Clear all cells
 function clearAll(){
     alert("Clicked Clear All"); // Replace this line with your code.
+}
+
+// Color a cell
+let currentColor=document.getElementById('selectedColorId');
+let colorChoice=currentColor.value;
+function changeColor(event){
+    document.getElementById('box').style.backgroundColor=colorChoice;
+    
 }
