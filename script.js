@@ -5,7 +5,7 @@ let colorSelected;
 
 // Add a row
 function addR() {
-    alert("Clicked"); // Replace this line with your code.
+    document.body.style.background='red';
 }
 
 // Add a column
@@ -45,9 +45,24 @@ function clearAll(){
 }
 
 // Color a cell
-let currentColor=document.getElementById('selectedColorId');
-let colorChoice=currentColor.value;
-function changeColor(event){
+
+function changeColor(){
+    let currentColor=document.getElementById('selectedColorId');
+    let colorChoice=currentColor.value;
+    let boxColor=getElementById('box').style.backgroundColor;
+    if(boxColor="white"){
+   // document.ge
+    //document.getEementById('box').style.backgroundColor=colorChoice;
     document.getElementById('box').style.backgroundColor=colorChoice;
-    
+} else()=>{
+    clearCell();
 }
+}
+
+
+// Make cell blank
+function clearCell(){
+    document.getElementById('box').style.backgroundColor="white";
+}
+
+//FIX CLEAR CELL FUNCTION AND HOW IT WORKS WITH CHANGE COLOR FUNCTION
