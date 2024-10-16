@@ -5,22 +5,24 @@ let colorSelected;
 
 // Add a row
 function addR() {
-    document.body.style.background='red';
+   numRows+=1;
 }
 
 // Add a column
 function addC() {
-    alert("Clicked Add Col"); // Replace this line with your code.
+    numCols+=1;
+    alert(numCols);
 }
 
 // Remove a row
 function removeR() {
-    alert("Clicked Remove Row"); // Replace this line with your code.
+    numRows-=1;
 }
 
 // Remove a column
 function removeC() {
-    alert("Clicked Remove Col"); // Replace this line with your code.
+   numCols-=1;
+   alert(numCols);
 }
 
 // Set global variable for selected color
@@ -41,22 +43,31 @@ function fillAll(){
 
 // Clear all cells
 function clearAll(){
-    alert("Clicked Clear All"); // Replace this line with your code.
+    document.getElementById('box').style.backgroundColor="white";
 }
 
 // Color a cell
 
 function changeColor(){
-    let currentColor=document.getElementById('selectedColorId');
-    let colorChoice=currentColor.value;
-    let boxColor=getElementById('box').style.backgroundColor;
-    if(boxColor="white"){
+    let currentColor=document.getElementById('selectedColorId').value;
+    let boxColor=document.getElementById('box').style.backgroundColor;
+    alert(boxColor);
+    if(boxColor =null || boxColor == "white"){
+         document.getElementById('box').style.backgroundColor=currentColor;
+    }
+    else()=> {
+        document.getElementById('box').style.backgroundColor="white";
+    }
+    
+    //if(boxColor!="white"){
    // document.ge
     //document.getEementById('box').style.backgroundColor=colorChoice;
-    document.getElementById('box').style.backgroundColor=colorChoice;
-} else()=>{
-    clearCell();
-}
+    
+//    let boxColor=getElementById('box').style.backgroundColor;
+ //   alert(boxColor);
+//} else()=>{
+//    clearCell();
+//}
 }
 
 
