@@ -3,8 +3,13 @@ let numRows = 0;
 let numCols = 0;
 let colorSelected; 
 
+
+
 // Add a row
 function addR() {
+   if(numRows=0){
+    var table=document.createElement("TABLE");
+   } 
    numRows+=1;
 }
 
