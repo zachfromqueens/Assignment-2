@@ -48,7 +48,7 @@ function addC() {
     
 }
 
-// Remove a row
+// Functionn to remove a row
 function removeR() {
     let removeRow=document.querySelector("table");
     let lastRow=removeRow.lastChild;
