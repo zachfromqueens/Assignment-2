@@ -3,37 +3,39 @@ let numRows = 0;
 let numCols = 0;
 let colorSelected; 
 let firstRow=document.querySelector("table");
+let firstColumn=document.querySelector("tr");
 
 
 
 // Add a row
 function addR() {
-   let newRow=document.createElement("tr");
+    let newRow=document.createElement("tr");
    firstRow.appendChild(newRow);
   
   if(numCols==0){
     numCols++;
   }
-   for(let i=0;i<numCols;i++){
+  for(let i=0;i<numCols;i++){
         let newBox3=document.createElement("td");
         newRow.appendChild(newBox3);
    }
-   numRows+=1;
+   numRows++;
+
 }
 
 // Add a column
 function addC() {
-    if(numRows==0){
-    let firstColumn=document.querySelector("table");
-    let newBox2=document.createElement("td");
-    firstColumn.appendChild(newBox2);
-    numCols+=1;
+    if(numRows==0){  
+        let newBox2=document.createElement("td");
+        firstColumn.appendChild(newBox2);
+        numRows++;
     }
     else {
-        let newBox5=document.createElement("td");
         let currentRows=document.querySelectorAll("tr");
         currentRows.forEach((x)=>{
+            let newBox5=document.createElement("td");
             x.appendChild(newBox5);
+            
         })
         /*alert(currentRows.length);
         for (let i=0; i<currentRows.length; i++){
@@ -43,9 +45,9 @@ function addC() {
         }
         currentRows.appendChild(newBox5);
         alert(numRows);*/
-     numCols++;   
+        
     }
-    
+    numCols++;
 }
 
 // Functionn to remove a row
@@ -53,14 +55,35 @@ function removeR() {
     let removeRow=document.querySelector("table");
     let lastRow=removeRow.lastChild;
     removeRow.removeChild(lastRow);
-    numRows-=1;
+    numRows--;
+    if(numRows==0){
+        numCols=0;
+    }
+
+    if(numRows<0){
+        numRows=0;
+    }
 }
 
 // Remove a column
 function removeC() {
-   numCols-=1;
-   alert(numCols);
+    let removeCols=document.querySelectorAll("tr");
+    removeCols.forEach((y)=>{
+        let lastBox=y.lastChild;
+        y.removeChild(lastBox);
+    })
+    numCols--;
+
+    if(numCols==0){
+    numRows=0;
+    }
+    
+    if(numCols<0){
+        numCols=0;
+    }
 }
+   
+
 
 // Set global variable for selected color
 function selectColor(){
@@ -75,7 +98,8 @@ function fillU(){
 
 // Fill all cells
 function fillAll(){
-    alert("Clicked Fill All"); // Replace this line with your code.
+    alert(numRows);
+    alert(numCols);
 }
 
 // Clear all cells
