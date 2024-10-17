@@ -2,25 +2,56 @@
 let numRows = 0;
 let numCols = 0;
 let colorSelected; 
+let firstRow=document.querySelector("table");
 
 
 
 // Add a row
 function addR() {
-   if(numRows=0){
-    var table=document.createElement("TABLE");
-   } 
+   let newRow=document.createElement("tr");
+   firstRow.appendChild(newRow);
+  
+  if(numCols==0){
+    numCols++;
+  }
+   for(let i=0;i<numCols;i++){
+        let newBox3=document.createElement("td");
+        newRow.appendChild(newBox3);
+   }
    numRows+=1;
 }
 
 // Add a column
 function addC() {
+    if(numRows==0){
+    let firstColumn=document.querySelector("table");
+    let newBox2=document.createElement("td");
+    firstColumn.appendChild(newBox2);
     numCols+=1;
-    alert(numCols);
+    }
+    else {
+        let newBox5=document.createElement("td");
+        let currentRows=document.querySelectorAll("tr");
+        currentRows.forEach((x)=>{
+            x.appendChild(newBox5);
+        })
+        /*alert(currentRows.length);
+        for (let i=0; i<currentRows.length; i++){
+            let x= currentRows[i];
+            x.appendChild(newBox5);
+
+        }
+        currentRows.appendChild(newBox5);
+        alert(numRows);*/
+     numCols++;   
+    }
+    
 }
 
 // Remove a row
 function removeR() {
+    let removeRow=document.querySelector("table");
+    removeRow.removeChild();
     numRows-=1;
 }
 
