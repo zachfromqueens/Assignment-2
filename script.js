@@ -88,23 +88,38 @@ function removeC() {
 // Set global variable for selected color
 function selectColor(){
     colorSelected = document.getElementById("selectedColorId").value;
-    console.log(colorSelected);
 }
 
 // Fill all uncolored cells
 function fillU(){
-    alert("Clicked Fill All Uncolored"); // Replace this line with your code.
+    let table=document.getElementById('grid');
+    let boxes=table.querySelectorAll("td");
+    let color=colorSelected;
+    boxes.forEach((x)=>{
+        let baseColor=x.style.backgroundColor;
+        if(baseColor='white'){
+          x.style.backgroundColor=color;
+        }
+    })
 }
 
 // Fill all cells
 function fillAll(){
-    alert(numRows);
-    alert(numCols);
+    let table=document.getElementById('grid');
+    let boxes=table.querySelectorAll("td");
+    let color=colorSelected;
+    boxes.forEach((x)=>{
+        x.style.backgroundColor=color;
+    })
 }
 
 // Clear all cells
 function clearAll(){
-    document.getElementById('box').style.backgroundColor="white";
+    let table=document.getElementById('grid');
+    let rows=table.querySelectorAll("td");
+    rows.forEach((x)=>{
+        x.style.backgroundColor="white";
+    })
 }
 
 // Color a cell
