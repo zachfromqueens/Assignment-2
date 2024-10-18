@@ -37,20 +37,12 @@ function addC() {
             x.appendChild(newBox5);
             
         })
-        /*alert(currentRows.length);
-        for (let i=0; i<currentRows.length; i++){
-            let x= currentRows[i];
-            x.appendChild(newBox5);
-
-        }
-        currentRows.appendChild(newBox5);
-        alert(numRows);*/
-        
+                
     }
     numCols++;
 }
 
-// Functionn to remove a row
+// Remove a row
 function removeR() {
     let removeRow=document.querySelector("table");
     let lastRow=removeRow.lastChild;
@@ -126,14 +118,22 @@ function clearAll(){
 
 function changeColor(){
     let currentColor=document.getElementById('selectedColorId').value;
-    let boxColor=document.getElementById('box').style.backgroundColor;
-    alert(boxColor);
-    if(boxColor =null || boxColor == "white"){
-         document.getElementById('box').style.backgroundColor=currentColor;
+    alert(currentColor);
+    //let boxColor=box.style.backgroundColor;
+    boxToColor.style.backgroundColor=currentColor;
+
+
+    //let boxColor=document.getElementById('box').style.backgroundColor;
+    
+   /* if(boxColor == null || boxColor == "white"){
+         //document.getElementsByTagName('td').style.backgroundColor=currentColor;
+         box.style.backgroundColor=currentColor;
     }
     else()=> {
-        document.getElementById('box').style.backgroundColor="white";
-    }
+        //document.getElementsByTagName('td').style.backgroundColor="white";
+        box.style.backgroundColor='white';
+    }  
+    */
     
     //if(boxColor!="white"){
    // document.ge
@@ -151,5 +151,16 @@ function changeColor(){
 function clearCell(){
     document.getElementById('box').style.backgroundColor="white";
 }
+
+
+//Function to make color change occur on clicking a box
+/*document.getElementsByTagName("td").addEventListener("click", (x) => {
+    alert("TEST");
+    changeColor(x);
+    
+  });
+*/
+document.addEventListener("click", changeColor());  
+
 
 //FIX CLEAR CELL FUNCTION AND HOW IT WORKS WITH CHANGE COLOR FUNCTION
