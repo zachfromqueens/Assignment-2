@@ -1,3 +1,5 @@
+Grid-Maker Project
+
 Zachary Armantrading
 
-Grid-Maker Project
+GitHub Username: zachfromqueens
