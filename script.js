@@ -126,31 +126,16 @@ theGrid.addEventListener("click", changeColor);
 function changeColor(event){
     let ele=event.target;
     let currentColor=document.getElementById('selectedColorId').value;
-    //ele.style.backgroundColor="white";
     let boxColor=ele.style.backgroundColor;
-    console.log(boxColor);
-   // alert(boxColor);
-/*    
-    if(boxColor === undefined || boxColor == "white"){
-        ele.style.backgroundColor=currentColor;
-   }
-   else()=> {
-       
-       ele.style.backgroundColor='white';
-   }  
-       */
-       
-
-   if (boxColor = "white"){
-    ele.style.backgroundColor=currentColor;
-    console.log('captain mario');
-   }
-   
-   else ()=> {
+    if(boxColor.toLowerCase()!=currentColor.toLowerCase()){
+        ele.style.backgroundColor=currentColor;   
+    }
+        
+    else  {
     ele.style.backgroundColor='white';
-    console.log('captain toad');
    }
-    
+  
+   
 
 }    
     
