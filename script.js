@@ -116,36 +116,40 @@ function clearAll(){
 
 // Color a cell
 
-function changeColor(){
+const theGrid=document.getElementById('grid');
+theGrid.addEventListener("click", changeColor);  
+
+function changeColor(event){
+    let ele=event.target;
     let currentColor=document.getElementById('selectedColorId').value;
+    ele.style.backgroundColor="white";
+    let boxColor=ele.style.backgroundColor;
+    alert(boxColor);
+   // alert(boxColor);
+/*    
+    if(boxColor === undefined || boxColor == "white"){
+        ele.style.backgroundColor=currentColor;
+   }
+   else()=> {
+       
+       ele.style.backgroundColor='white';
+   }  
+       */
+       
+
+   if (ele.style.backgroundColor = "white"){
+    ele.style.backgroundColor=currentColor;
     alert(currentColor);
-    //let boxColor=box.style.backgroundColor;
-    boxToColor.style.backgroundColor=currentColor;
-
-
-    //let boxColor=document.getElementById('box').style.backgroundColor;
+   }
+   
+   else {
+    ele.style.backgroundColor='white';
+    alert('white');
+   }
     
-   /* if(boxColor == null || boxColor == "white"){
-         //document.getElementsByTagName('td').style.backgroundColor=currentColor;
-         box.style.backgroundColor=currentColor;
-    }
-    else()=> {
-        //document.getElementsByTagName('td').style.backgroundColor="white";
-        box.style.backgroundColor='white';
-    }  
-    */
-    
-    //if(boxColor!="white"){
-   // document.ge
-    //document.getEementById('box').style.backgroundColor=colorChoice;
-    
-//    let boxColor=getElementById('box').style.backgroundColor;
- //   alert(boxColor);
-//} else()=>{
-//    clearCell();
-//}
-}
 
+}    
+    
 
 // Make cell blank
 function clearCell(){
@@ -153,14 +157,8 @@ function clearCell(){
 }
 
 
-//Function to make color change occur on clicking a box
-/*document.getElementsByTagName("td").addEventListener("click", (x) => {
-    alert("TEST");
-    changeColor(x);
-    
-  });
-*/
-document.addEventListener("click", changeColor());  
 
 
-//FIX CLEAR CELL FUNCTION AND HOW IT WORKS WITH CHANGE COLOR FUNCTION
+
+
+
