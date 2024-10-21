@@ -17,6 +17,8 @@ function addR() {
   }
   for(let i=0;i<numCols;i++){
         let newBox3=document.createElement("td");
+        newBox3.style.backgroundColor='white';
+
         newRow.appendChild(newBox3);
    }
    numRows++;
@@ -27,6 +29,7 @@ function addR() {
 function addC() {
     if(numRows==0){  
         let newBox2=document.createElement("td");
+        newBox2.style.backgroundColor='white';
         firstColumn.appendChild(newBox2);
         numRows++;
     }
@@ -34,6 +37,7 @@ function addC() {
         let currentRows=document.querySelectorAll("tr");
         currentRows.forEach((x)=>{
             let newBox5=document.createElement("td");
+            newBox5.style.backgroundColor='white';
             x.appendChild(newBox5);
             
         })
@@ -122,9 +126,9 @@ theGrid.addEventListener("click", changeColor);
 function changeColor(event){
     let ele=event.target;
     let currentColor=document.getElementById('selectedColorId').value;
-    ele.style.backgroundColor="white";
+    //ele.style.backgroundColor="white";
     let boxColor=ele.style.backgroundColor;
-    alert(boxColor);
+    console.log(boxColor);
    // alert(boxColor);
 /*    
     if(boxColor === undefined || boxColor == "white"){
@@ -137,14 +141,14 @@ function changeColor(event){
        */
        
 
-   if (ele.style.backgroundColor = "white"){
+   if (boxColor = "white"){
     ele.style.backgroundColor=currentColor;
-    alert(currentColor);
+    console.log('captain mario');
    }
    
-   else {
+   else ()=> {
     ele.style.backgroundColor='white';
-    alert('white');
+    console.log('captain toad');
    }
     
 
