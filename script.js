@@ -29,8 +29,10 @@ function addR() {
 function addC() {
     if(numRows==0){  
         let newBox2=document.createElement("td");
+        let newRow=document.createElement("tr");
         newBox2.style.backgroundColor='white';
-        firstColumn.appendChild(newBox2);
+        firstRow.appendChild(newRow);
+        newRow.appendChild(newBox2);
         numRows++;
     }
     else {
@@ -93,7 +95,7 @@ function fillU(){
     let color=colorSelected;
     boxes.forEach((x)=>{
         let baseColor=x.style.backgroundColor;
-        if(baseColor='white'){
+        if(baseColor.toLowerCase()==='white'){
           x.style.backgroundColor=color;
         }
     })
